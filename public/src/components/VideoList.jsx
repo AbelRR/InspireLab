@@ -11,7 +11,7 @@ const VideoList = ({updatePage, currentVideo, updateCurrentVideo, updateNotes, n
         <li class="breadcrumb-item"><a href="#">Arduino</a></li>
         <li class="breadcrumb-item active" aria-current="page">ReactJS</li>
         <li class="breadcrumb-item"><a href="#">Oculus Rift</a></li>
-        <li class="breadcrumb-item"> Magic Leap</li>
+        <li class="breadcrumb-item"><a href="#">Magic Leap</a></li>
       </ol>
     </nav>
 
