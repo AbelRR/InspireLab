@@ -25,8 +25,18 @@
   height: 150px;
 }
 
-.videoListContainer {
+.pitchField {
+  width: 350px;
+  height: 80px;
+}
+
+.videoListContainer, flexContainer  {
   display: flex;
+}
+
+.flexContainer {
+  display: flex;
+  margin: 0 15%;
 }
 
 a {
@@ -42,6 +52,7 @@ a {
 	letter-spacing: 2px;
 	font-size: 12px;
   padding: 10px 50px;
+  margin-top: 20px;
 }
 
 .btn:hover {
@@ -91,3 +102,22 @@ a {
 .videoContainer {
   margin-right: 50px;
 }
+
+.two-lists {
+  max-width: 450px;
+}
+
+.contactForm {
+  max-width: 450px;
+}
+
+.technology-list,
+.problem-list {
+  list-style-type: none;
+  text-align: left;
+}
+
+.listContainer {
+  text-align: left;
+}
+

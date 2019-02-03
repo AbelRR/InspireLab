@@ -1,5 +1,6 @@
 import React from 'react';
 import VideoList from './VideoList.jsx';
+import PitchForm from './PitchForm.jsx';
 import videoData from '../videoData';
 
 class App extends React.Component {
@@ -45,22 +46,29 @@ class App extends React.Component {
           notes={this.state.notes}
         />
       );
+    } if (this.state.currentPage === 'PitchForm') {
+      return (
+        <PitchForm
+          updatePage={this.updatePage}
+        />
+      );
     } if (this.state.currentPage === 'Home') {
       return (
-        <div className="container">
-          <h1>
+        <div className="biggerContainer">
+          <div>
+            <h1>
+              <span>
+                inspireLab
+              </span>
+            </h1>
+            <h4>Our mission is to help the local communities solve a problem by educating them through hands-on technology learning. </h4>
+            <h5>Without the knowledge of technology, a student body would not know the potential they have in using that technology to solve a local problem.</h5>
             <span>
-              inspireLab
+              <iframe width="500" height="315" src="https://www.youtube.com/embed/gbJB3387xUw"></iframe>
             </span>
-          </h1>
-          <h2>Our mission is to help the local communities solve a problem by educating them through hands-on technology learning. </h2>
-          <h3>Without the knowledge of technology, a student body would not know the potential they have in using that technology to solve a local problem.</h3>
-          <span>
-            <iframe width="500" height="315" src="https://www.youtube.com/embed/gbJB3387xUw"></iframe>
-          </span>
-
+          </div>
           <a onClick={() => this.setState({currentPage: 'VideoList'})} className="btn">
-          Begin Your Inspiratory Journey
+            Begin Your Inspiratory Journey
           </a>
         </div>
       );
