@@ -1,32 +1,56 @@
 import React from 'react';
 import VideoList from './VideoList.jsx';
+import videoData from '../videoData';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       currentPage: 'Home',
+      currentVideo: videoData[0],
+      notes: '',
     }
     this.updatePage = this.updatePage.bind(this);
+    this.updateCurrentVideo = this.updateCurrentVideo.bind(this);
+    this.updateNotes = this.updateNotes.bind(this);
   }
 
   updatePage(pageName) {
     this.setState({
-      currentPage: pageName
+      currentPage: pageName,
     })
+  }
+
+  updateCurrentVideo(aVideo) {
+    this.setState({
+      currentVideo: aVideo
+    });
+  }
+
+  updateNotes(e) {
+    this.setState({
+      notes: e.target.value
+    });
   }
 
   render () {
     if (this.state.currentPage === 'VideoList') {
       return (
-        <VideoList updatePage={this.updatePage}/>
+        <VideoList
+          updatePage={this.updatePage}
+          handleClick={this.updateCurrentVideo.bind(this)}
+          currentVideo={this.state.currentVideo}
+          updateCurrentVideo={this.updateCurrentVideo}
+          updateNotes={this.updateNotes}
+          notes={this.state.notes}
+        />
       );
     } if (this.state.currentPage === 'Home') {
       return (
         <div className="container">
           <h1>
             <span>
-              Inspiratory
+              inspireLab
             </span>
           </h1>
           <h2>Our mission is to help the local communities solve a problem by educating them through hands-on technology learning. </h2>
@@ -38,7 +62,6 @@ class App extends React.Component {
           <a onClick={() => this.setState({currentPage: 'VideoList'})} className="btn">
           Begin Your Inspiratory Journey
           </a>
-          {/* <VideoList /> */}
         </div>
       );
     }
