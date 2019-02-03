@@ -12,10 +12,10 @@ const VideoList = ({updatePage}) => (
           video={video}
         />
       ))}
+      <a onClick={() => updatePage('Home')} className="btn">
+        Back
+      </a>
     </div>
-    <a onClick={() => updatePage('Home')} className="btn">
-      Back
-    </a>
   </div>
 )
 
